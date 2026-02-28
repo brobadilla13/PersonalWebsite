@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario André Bobadilla</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #080808;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Cinzel', serif;
+            overflow: hidden;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%);
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .name {
+            font-size: clamp(2rem, 8vw, 5rem);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            color: #f0f0f0;
+            opacity: 0;
+            animation: rise 1.4s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        .divider {
+            width: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #666, transparent);
+            animation: expand 1s ease forwards;
+            animation-delay: 1.4s;
+            opacity: 0;
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 3.5vw, 2rem);
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: #aaa;
+            opacity: 0;
+            animation: rise 1.2s ease forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0);    }
+        }
+
+        @keyframes expand {
+            from { width: 0; opacity: 0; }
+            to   { width: min(500px, 70vw); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="name">Mario André Bobadilla</h1>
+        <div class="divider"></div>
+        <p class="subtitle">I'm the Dude</p>
+    </div>
+</body>
+</html>
